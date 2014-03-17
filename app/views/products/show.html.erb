@@ -1,6 +1,5 @@
-<p id="notice"><%= notice %></p>
 
-<p>
+
   <strong>Tittle:</strong>
   <%= @product.tittle %>
 </p>
@@ -17,7 +16,7 @@
 
 <p>
   <strong>Price:</strong>
-  <%= @product.price %>
+  <%= number_to_currency(@product.price)%>
 </p>
 
 <div class="btn-group">
