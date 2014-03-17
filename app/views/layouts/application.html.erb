@@ -11,6 +11,7 @@
 	<div id="banner">
 		<%= image_tag("logo.png") %>
 		<%= @page_title || "Pragmatic Bookshelf" %>
+
 	</div>
 	
 	<div id="columns">
@@ -21,11 +22,15 @@
 				<li><a href="http://www..../faq">Questions</a></li>
 				<li><a href="http://www..../news">News</a></li>
 				<li><a href="http://www..../contact">Contact</a></li>
+
 			</ul>
 		</div>
 		<div id="main">
+		
 			<%= yield %>  <!-- referencia al view de cada controlador -->
+				<p> Hora: <%= Time.now %> </p>
 		</div>
+
 	</div>
 
 </body>

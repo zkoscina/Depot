@@ -6,4 +6,9 @@ validates :tittle, uniqueness: true #los titulos no se pueden repetir
 validates :image_url, allow_blank: true, format: { #el nombre del archivo debe tener extension adecuada
 with: %r{\.(gif|jpg|png)\Z}i,
 message: 'must be a URL for GIF, JPG or PNG image.'}
+
+def self.latest
+Product.order(:updated_at).last
+end
+
 end
