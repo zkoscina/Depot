@@ -3,7 +3,7 @@ class CartsController < ApplicationController
 
   # GET /carts
   # GET /carts.json
-  def index
+  def index #defino un metodo que retorna un arreglo con todos los carros
     @carts = Cart.all
   end
 
@@ -24,7 +24,9 @@ class CartsController < ApplicationController
   # POST /carts
   # POST /carts.json
   def create
-    @cart = Cart.new(cart_params)
+    @cart = Cart.new(cart_params)  #defino una variable perteneciente particularmente a la clase cart, en particular estoy
+    #creando un nuevo carro
+
 
     respond_to do |format|
       if @cart.save

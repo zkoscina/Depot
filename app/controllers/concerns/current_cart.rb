@@ -9,12 +9,12 @@
 module CurrentCart
   extend ActiveSupport::Concern
 
-  private
-
-    def set_cart 
-      @cart = Cart.find(session[:cart_id])
+  private #definiendo un metodo privado solo para la clase que lo contiene.
+    def set_cart  #metodo
+      @cart = Cart.find(session[:cart_id]) # un carro 
     rescue ActiveRecord::RecordNotFound
       @cart = Cart.create
       session[:cart_id] = @cart.id
     end
 end
+
