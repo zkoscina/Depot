@@ -28,8 +28,9 @@ class LineItemsController < ApplicationController
   # POST /line_items.json
   def create
     product = Product.find(params[:product_id]) #de los parametros recibidos, busco con el product_id con la funcion find de la clase producto.
-    @line_item = @cart.line_items.build(product: product)  #para el lineitem del carro actual lo construimos
+    #@line_item = @cart.line_items.build(product: product)  para el lineitem del carro actual lo construimos
     #que basicamente es generar la relación entre producto y LineItem.
+    @line_item = @cart.add_product(product.id)
    
     respond_to do |format|
       if @line_item.save
